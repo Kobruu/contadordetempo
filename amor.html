@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosso contador de tempo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        h1 {
+            margin-top: 20px;
+        }
+        .contador {
+            font-size: 2em;
+            margin: 20px 0;
+        }
+        img {
+            max-width: 30%;
+            margin: 10px;
+            border-radius: 10px;
+        }
+        .texto {
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Desde o dia que nos conhecemos</h1>
+    <div class="contador" id="contador"></div>
+    <div>
+        <img src="amor 1.jpeg" alt="Foto nossa">
+        <img src="amor 2.jpeg" alt="Foto nossa">
+        <img src="amor 3.jpeg" alt="Foto nossa">
+        <img src="amor 4.jpeg" alt="Foto nossa">
+        <img src="amor 5.jpeg" alt="Foto nossa">
+    </div>
+    <div class="texto">
+        <p>A cada dia que passa, meu amor por você só cresce. Obrigado(a) por estar ao meu lado. ❤️</p>
+    </div>
+
+    <script>
+        const dataConhecimento = new Date('2024-03-30T00:00:00'); // Coloque a data aqui
+        const contador = document.getElementById('contador');
+
+        function atualizarContador() {
+            const agora = new Date();
+            const diferenca = agora - dataConhecimento;
+            const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
+            const horas = Math.floor((diferenca % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutos = Math.floor((diferenca % (1000 * 60 * 60)) / (1000 * 60));
+            const segundos = Math.floor((diferenca % (1000 * 60)) / 1000);
+
+            contador.innerHTML = `${dias} dias, ${horas} horas, ${minutos} minutos e ${segundos} segundos`;
+        }
+
+        setInterval(atualizarContador, 1000);
+    </script>
+</body>
+</html>
