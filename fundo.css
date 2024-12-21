@@ -1,0 +1,6 @@
+body {
+    background-image: url('fundo-login.gif');
+    background-size: cover; /* ou contain */
+    background-repeat: no-repeat;
+    background-position: center;
+}
