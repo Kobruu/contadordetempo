@@ -6,11 +6,15 @@
     <title>Login</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Times', sans-serif; /* Alterar a fonte aqui */
             text-align: center;
             background-color: #f8f9fa;
             margin: 0;
             padding: 0;
+            background-image: url('fundo-login.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
         .login-container {
             max-width: 400px;
@@ -23,6 +27,7 @@
         }
         h1 {
             margin-bottom: 20px;
+            font-family: 'Arial', sans-serif; /* Alterar a fonte do título aqui */
         }
         input {
             width: 90%;
@@ -30,6 +35,7 @@
             margin: 10px 0;
             border: 1px solid #ccc;
             border-radius: 5px;
+            font-family: 'Arial', sans-serif; /* Alterar a fonte dos inputs aqui */
         }
         button {
             padding: 10px 20px;
@@ -38,6 +44,7 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            font-family: 'Arial', sans-serif; /* Alterar a fonte do botão aqui */
         }
         button:hover {
             background-color: #0056b3;
@@ -49,7 +56,6 @@
     </style>
 </head>
 <body>
-    <body style="background-image: url('fundo-login.gif'); background-size: cover; background-position: center; background-repeat: no-repeat;">
     <div class="login-container">
         <h1>Faça o login no meu ❤️</h1>
         <input type="text" id="username" placeholder="Usuário" required>
@@ -58,6 +64,27 @@
         <p id="error-message">Usuário ou senha incorretos!</p>
     </div>
 
-    <script src="login.js"></script>
+    <script>
+        // Credenciais de login configuráveis
+        const loginConfig = {
+            username: "linda", // Altere o usuário aqui
+            password: "teamo"   // Altere a senha aqui
+        };
+
+        // Função de login
+        function login() {
+            const usernameInput = document.getElementById('username').value;
+            const passwordInput = document.getElementById('password').value;
+            const errorMessage = document.getElementById('error-message');
+
+            if (usernameInput === loginConfig.username && passwordInput === loginConfig.password) {
+                alert('Login realizado com sucesso!');
+                localStorage.setItem("loggedIn", "true");
+                window.location.href = "index.html"; // Redireciona para a página principal
+            } else {
+                errorMessage.style.display = 'block';
+            }
+        }
+    </script>
 </body>
 </html>

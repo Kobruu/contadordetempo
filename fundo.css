@@ -1,6 +1,7 @@
 body {
-    background-image: url('fundo-login.gif');
-    background-size: cover; /* ou contain */
-    background-repeat: no-repeat;
+    background-image: url('papel-de-parede.gif');
+    background-size: contain; /* ou use 'cover' para preencher a tela */
     background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Para que o fundo fique fixo ao rolar */
 }
